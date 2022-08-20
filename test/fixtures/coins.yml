@@ -2,12 +2,10 @@
 
 one:
   description: MyString
-  string: MyString
   acronym: MyString
   url_image: MyString
 
 two:
   description: MyString
-  string: MyString
   acronym: MyString
   url_image: MyString
