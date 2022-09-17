@@ -1,10 +1,7 @@
 Rails.application.routes.draw do
-  get 'products/index'
   get 'welcome/index'
-  resources :coins
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  get '/inicio', to: "welcome#index"
+  resources :coins # cria rotas default de CRUD para a entidade de Moedas
 
-  # Defines the root path route ("/")
-  # root "articles#index"
   root to: "welcome#index"
 end
