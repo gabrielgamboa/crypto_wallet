@@ -6,4 +6,14 @@ module ApplicationHelper
     def application_name
         "CRYPTO WALLET APP"
     end
+
+    def ambiente_rails
+        if Rails.env.production?
+            "Produção"
+        elsif Rails.env.development?
+            "Desenvolvimento"
+        else 
+            "Homologação"
+        end
+    end
 end
