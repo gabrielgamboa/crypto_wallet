@@ -1,7 +1,7 @@
 <h1>Seja Bem-Vindo ao <%=application_name%></h1>
-
 <p>Data de hoje: <%= date_helper Date.today%></p>
-<p><%=link_to "Cadastro de Moedas", coins_path%></p>
+
+<%= render "menu" #partials, renderizando o arquivo _menu.html.erb %> 
 
 <p>
     Você está no ambiente de <strong><%= ambiente_rails %></strong>
