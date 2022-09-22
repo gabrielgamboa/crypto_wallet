@@ -3,11 +3,15 @@
 <h1>Coins</h1>
 
 <div id="coins">
-  <% @coins.each do |coin| %>
-    <%= render coin %>
-    <p>
-      <%= link_to "Show this coin", coin %>
-    </p>
+  <% if @coins.empty? %>
+    <p>Não há moedas cadastradas na aplicação</p>
+  <% else %>
+    <% @coins.each do |coin| %>
+      <%= render coin %>
+      <p>
+        <%= link_to "Show this coin", coin %>
+      </p>
+    <% end %>
   <% end %>
 </div>
 
