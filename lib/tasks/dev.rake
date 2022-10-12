@@ -6,8 +6,8 @@ namespace :dev do
       execute_task("Apagando banco de dados...") {  %x(rails db:drop)  }# %x permite executarmos um comando no terminal 
       execute_task("Criando banco de dados...") {  %x(rails db:create)  }
       execute_task("Rodando migrations...") {  %x(rails db:migrate)  }
-      execute_task("Cadastrando moedas...") {  %x(rails dev:add_coins)  }
       execute_task("Cadastrando tipos de mineração...") {  %x(rails dev:add_mining_types)  }
+      execute_task("Cadastrando moedas...") {  %x(rails dev:add_coins)  }
     else
       puts "Você não está no ambiente de desenvolvimento para rodar essa task."
     end
@@ -19,12 +19,14 @@ namespace :dev do
       {
         description: "Bitcoin",
         acronym: "BTC",
-        url_image:"https://upload.wikimedia.org/wikipedia/commons/c/cf/Bitcoin.com_logo.png"
+        url_image:"https://upload.wikimedia.org/wikipedia/commons/c/cf/Bitcoin.com_logo.png",
+        mining_type: MiningType.find_by(acronym: "PoW")
       },
       {
         description: "Etherium",
         acronym: "ETH",
-          url_image:"https://media.moneytimes.com.br/uploads/2022/03/ethereum-pexels.jpg"
+        url_image:"https://media.moneytimes.com.br/uploads/2022/03/ethereum-pexels.jpg",
+        mining_type: MiningType.all.sample
       }
     ]
 
